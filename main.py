@@ -64,7 +64,7 @@ def make_request(url, headers={}, method="GET", auth=None, req_data={}):
             print("Method type: This {method} is not supported !")
             return None
         result = response.json().get("data")
-        if(type(result.get("data")) == list):
+        if(type(result) == list):
                 return result
         result['timestamp'] = datetime.utcnow()
         return [result]
